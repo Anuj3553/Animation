@@ -1,4 +1,5 @@
 import './App.css'
+import EmojisAnimation from './framer-components/EmojisAnimation'
 // import DraggableDiv from './framer-components/DraggableDiv'
 // import GestureButton from './framer-components/GestureButton'
 // import KeyFrames from './framer-components/KeyFrames'
@@ -17,6 +18,7 @@ const App = () => {
         {/* <KeyFrames /> */}
         {/* <GestureButton /> */}
         {/* <DraggableDiv /> */}
+        <EmojisAnimation />
       </div>
     </>
   )
