@@ -37,7 +37,7 @@ const EmojisAnimation = () => {
                 className="mt-10 flex flex-col space-y-6 justify-center items-center">
                 <motion.div
                     variants={variant1}
-                    className="flex items-center rounded-full p-4 justify-evenly w-64 text-3xl h-12 bg-white">
+                    className="flex items-center opacity-0 rounded-full p-4 justify-evenly w-64 text-3xl h-12 bg-white">
                     {/* some emojis */}
                     <motion.span
                         variants={variant2}
@@ -53,7 +53,9 @@ const EmojisAnimation = () => {
                 </motion.div>
                 <button
                     onClick={() => setShowEmojis(!showEmojis)}
-                    className="bg-sky-500 text-white font-bold py-2 px-8 rounded-lg cursor-pointer">{!showEmojis ? "Show emojis" : "Hide emojis"}</button>
+                    className="bg-sky-500 text-white font-bold py-2 px-8 rounded-lg cursor-pointer"
+                >{!showEmojis ? "Show emojis" : "Hide emojis"}
+                </button>
             </motion.div>
         </div>
     )
