@@ -2,14 +2,14 @@ import { useState } from "react"
 import { motion } from 'framer-motion'
 
 const variant1 = {
-    "show": {
+    show: {
         opacity: 1,
         transition: {
             when: "beforeChildren",
-            staggerChildren: 0.1
+            // staggerChildren: 0.1
         }
     },
-    "hide": {
+    hide: {
         opacity: 0,
         transition: {
             when: "afterChildren",
@@ -18,17 +18,22 @@ const variant1 = {
 }
 
 const variant2 = {
-    "show": {
+    show: (i) => ({
         opacity: 1,
-        y: 0
-    },
-    "hide": {
+        y: 0,
+        transition: {
+            delay: i * 2
+        }
+    }),
+    hide: {
         opacity: 0,
         y: -10
     }
 }
 
-const EmojisAnimation = () => {
+const emojisArr = ['❤️', '😂', '👏', '😭', '😡']
+
+const DynamicVariants = () => {
     const [showEmojis, setShowEmojis] = useState(false)
     return (
         <div>
@@ -39,17 +44,13 @@ const EmojisAnimation = () => {
                     variants={variant1}
                     className="flex items-center opacity-0 rounded-full p-4 justify-evenly w-64 text-3xl h-12 bg-white">
                     {/* some emojis */}
-                    <motion.span
-                        variants={variant2}
-                        className="bg-transparent">👍</motion.span>
-                    <motion.span
-                        variants={variant2} className="bg-transparent">😂</motion.span>
-                    <motion.span
-                        variants={variant2} className="bg-transparent">❤️</motion.span>
-                    <motion.span
-                        variants={variant2} className="bg-transparent">👏</motion.span>
-                    <motion.span
-                        variants={variant2} className="bg-transparent">😭</motion.span>
+                    {emojisArr.map((emoji, index) => {
+                        return (
+                            <motion.span custom={index} key={index} variants={variant2} className="bg-transparent">
+                                {emoji}
+                            </motion.span>
+                        )
+                    })}
                 </motion.div>
                 <button
                     onClick={() => setShowEmojis(!showEmojis)}
@@ -61,4 +62,4 @@ const EmojisAnimation = () => {
     )
 }
 
-export default EmojisAnimation
+export default DynamicVariants
