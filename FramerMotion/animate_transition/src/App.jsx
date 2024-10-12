@@ -1,5 +1,7 @@
 import './App.css'
-import KeyFrames from './framer-components/KeyFrames'
+// import DraggableDiv from './framer-components/DraggableDiv'
+// import GestureButton from './framer-components/GestureButton'
+// import KeyFrames from './framer-components/KeyFrames'
 // import ExitAndEnterAnimation from './framer-components/ExitAndEnterAnimation'
 // import ProgressBar from './framer-components/ProgressBar'
 
@@ -12,7 +14,9 @@ const App = () => {
         </h1>
         {/* <ProgressBar /> */}
         {/* <ExitAndEnterAnimation /> */}
-        <KeyFrames />
+        {/* <KeyFrames /> */}
+        {/* <GestureButton /> */}
+        {/* <DraggableDiv /> */}
       </div>
     </>
   )
