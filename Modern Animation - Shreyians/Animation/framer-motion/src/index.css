@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: gilroy;
+    color: #fff;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#box {
+    background-color: crimson;
+    height: 300px;
+    width: 300px;
+}
+
+/* toastStyles.css */
+.Toastify__toast-body>div:last-child {
+    color: black !important;
+    /* Ensures the toast text is black */
+}
+
+.Toastify__close-button>svg {
+    fill: black !important;
+    /* Ensures the close button is black */
+}
